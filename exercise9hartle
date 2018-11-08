@@ -1,0 +1,11 @@
+#This is the answer to the first problem
+#I can attach my menheightweight.txt file separately
+#I couldn't get plotting to work on Python, so Stuart had me download on R and he said I should still submit my exercise to you
+
+hwdata <- read.table("menheightweight.txt", header = TRUE)
+attach(hwdata)
+
+plot(Height, Weight)
+
+
+#This is the answer to the second problem
