@@ -1,0 +1,37 @@
+
+#I was unable to get ggplot working through Python, so Stuart had me download R studio
+#He told me to still submit my assignment to you
+
+#This is my answer to the first problem
+
+install.packages("ggplot2")
+library(ggplot2)
+library(grid)
+library(gridExtra)
+
+hwdata <- read.table("menheightweight.txt", header = TRUE)
+attach(hwdata)
+
+a = ggplot(data = hwdata, aes(x = Height, y = Weight))
+a + geom_point() + coord_cartesian()
+a + geom_point() + coord_cartesian() + theme_bw()
+a + geom_point() + theme_classic() + xlab("Height") +
+  ylab("Weight") + stat_smooth(method = "lm")
+  
+  
+  #This is the answer to the second problem
+  
+  install.packages("ggplot2")
+library(ggplot2)
+library(grid)
+library(gridExtra)
+
+datatxt <- read.table("data.txt", header = TRUE, sep = ",")
+a = ggplot(data = datatxt, aes(x = aggregate( observations ~ region, data, mean ), y = region))
+a + geom_bar() + coord_cartesian()
+
+datatxt <- read.table("data.txt", header = TRUE, sep = ",")
+
+a = ggplot(data = datatxt, aes(x = observations, y = region))
+a + geom_point() + coord_cartesian()
+a + geom_jitter()
